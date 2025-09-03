@@ -21,8 +21,35 @@ const server=http.createServer(
             });
         }
     }
-       
+    ).listen("8080");
+            
+
+    // Html file format
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+</head>
+<body>
+    <div>
+    <h1 style="text-align: center; color:black">Login Page</h1>
+    <input type="text" name="username" placeholder="username" style="text-align: center;">
+    <br>
+    <br>
+    <input style="text-align: center;" type="text" name="password" placeholder="password">
+    <br>
+    <br>
+    <a href="./admin">
+    <button style="text-align: center; color:blue" type="submit"> Login here</button>
+    <a></a>
+    </div>
+</body>
+</html>
+    
 
 
-).listen("8080");
+
             
