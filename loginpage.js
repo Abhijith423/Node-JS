@@ -48,6 +48,39 @@ const server=http.createServer(
     </div>
 </body>
 </html>
+
+//index.js
+
+var http=require('http');
+const url=require('url'); //url route creation
+const fs=require('fs');   //file system module
+    
+const server=http.createServer(
+    function(req,res){
+        const rurl=url.parse(req.url,true).pathname;
+        if(rurl=="/admin"){
+            fs.readFile('index.html',function(err,data){
+                res.writeHead(200,{'Content-Type':'text/html'});
+                res.end(data);
+
+            });
+        }
+        else if(rurl=="/login"){
+            fs.readFile('Login.html',function(err,data){
+                res.writeHead(200,{'Content-Type':'text/html'});
+                res.end(data);
+            });
+        }
+        else{
+           res.write("<h1 style='color:black; text-align:center'>504 gateway timeout</h1>");
+           res.end();
+            }
+        }
+
+
+).listen("8080");
+
+            
     
 
 
